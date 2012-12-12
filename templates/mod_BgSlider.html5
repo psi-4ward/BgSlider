@@ -1,0 +1,4 @@
+<?php $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/BgSlider/public/BgSlider.js'; ?>
+<script>
+var bgs = new BgSlider(<?php echo json_encode($this->images); ?>,{duration:<?php echo $this->BgSlider_slideTime; ?>,delay:<?php echo $this->BgSlider_waitTime; ?>,'autoplay':<?php echo $this->BgSlider_autoplay?'true':'false'; ?>,'slideAfterLoad':<?php echo $this->BgSlider_slideAfterLoad?'true':'false'; ?>,'showNav':<?php echo $this->BgSlider_showNav?'true':'false'; ?>});
+</script>
