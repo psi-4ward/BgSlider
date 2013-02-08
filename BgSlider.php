@@ -86,7 +86,7 @@ class BgSlider extends \Module
 				}
 
 				// Add the image
-				$images[$objFiles->path] = array('path'=>$objFiles->path,'name'=>$objFile->name);
+				$images[$objFiles->path] = array('path'=>$objFiles->path, 'name'=>$objFile->name, 'height'=>$objFile->height, 'width'=>$objFile->width);
 			}
 
 			// Folders
@@ -115,7 +115,7 @@ class BgSlider extends \Module
 					}
 
 					// Add the image
-					$images[$objSubfiles->path] = array('path'=>$objSubfiles->path,'name'=>$objSubfiles->name);
+					$images[$objSubfiles->path] = array('path'=>$objSubfiles->path, 'name'=>$objSubfiles->name, 'height'=>$objFile->height, 'width'=>$objFile->width);
 				}
 			}
 		}
@@ -126,17 +126,12 @@ class BgSlider extends \Module
 		{
 			$tmp = array_pop($images);
 			array_unshift($images, $tmp);
-			if(preg_match("~".preg_quote($GLOBALS['objPage']->alias)."\.[a-z]+$~",$tmp['name']))
+			if(preg_match("~".preg_quote($GLOBALS['objPage']->alias)."\.[a-z]+$~", $tmp['path']))
 			{
 				break;
 			}
 		}
 
-		$imageFiles = array();
-		foreach($images as $img)
-		{
-			$imageFiles[] = $img['path'];
-		}
-		$this->Template->images = $imageFiles;
+		$this->Template->images = $images;
 	}
 }

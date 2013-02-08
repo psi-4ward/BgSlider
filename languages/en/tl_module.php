@@ -19,5 +19,6 @@ $GLOBALS['TL_LANG']['tl_module']['BgSlider_waitTime']			= array('Wait time','Tim
 $GLOBALS['TL_LANG']['tl_module']['BgSlider_showNav']			= array('Show navigation','Shows navigation elements to switch between the images.');
 $GLOBALS['TL_LANG']['tl_module']['BgSlider_autoplay']			= array('Autoplay','Run the slideshow on pageload.');
 $GLOBALS['TL_LANG']['tl_module']['BgSlider_slideAfterLoad']		= array('Slide after pageload', 'The last displayed image is shown until the image for this site is fully loaded.');
+$GLOBALS['TL_LANG']['tl_module']['BgSlider_proportional']		= array('Scale image proportional','Keep the image aspect ratio.');
 
 $GLOBALS['TL_LANG']['tl_module']['BgSlider_hint']				= '<span style="font-weight:bold">Hint</span>: Name the image file like a page-alias to display it on this page as first image.';

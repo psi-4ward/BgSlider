@@ -11,7 +11,7 @@
  */
 
 
-$GLOBALS['TL_DCA']['tl_module']['palettes']['BgSlider'] = '{title_legend},name,type;{config_legend},BgSlider_slideTime,BgSlider_waitTime,BgSlider_showNav,BgSlider_autoplay,BgSlider_slideAfterLoad;'
+$GLOBALS['TL_DCA']['tl_module']['palettes']['BgSlider'] = '{title_legend},name,type;{config_legend},BgSlider_slideTime,BgSlider_waitTime,BgSlider_showNav,BgSlider_autoplay,BgSlider_slideAfterLoad,BgSlider_proportional;'
 															.'{source_legend},multiSRC,BgSlider_filesHint;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_slideTime'] = array
@@ -46,6 +46,14 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_autoplay'] = array
 $GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_slideAfterLoad'] = array
 (
 	'label'		=> &$GLOBALS['TL_LANG']['tl_module']['BgSlider_slideAfterLoad'],
+	'inputType'	=> 'checkbox',
+	'default'	=> '1',
+	'eval'		=> array('tl_class'=>'w50'),
+	'sql'		=> "char(1) NOT NULL default '1'"
+);
+$GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_proportional'] = array
+(
+	'label'		=> &$GLOBALS['TL_LANG']['tl_module']['BgSlider_proportional'],
 	'inputType'	=> 'checkbox',
 	'default'	=> '1',
 	'eval'		=> array('tl_class'=>'w50'),
