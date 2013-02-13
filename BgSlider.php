@@ -28,7 +28,7 @@ class BgSlider extends \Module
 	{
 		if (TL_MODE == 'BE')
 		{
-			$objTemplate = new BackendTemplate('be_wildcard');
+			$objTemplate = new \BackendTemplate('be_wildcard');
 
 			$objTemplate->wildcard = '### BG Slider ###';
 			$objTemplate->title = $this->headline;
