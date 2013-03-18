@@ -18,6 +18,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_slideTime'] = array
 (
 	'label'		=> &$GLOBALS['TL_LANG']['tl_module']['BgSlider_slideTime'],
 	'inputType'	=> 'text',
+	'default'   => '1000',
 	'eval'		=> array('mandatory'=>true, 'rgxp'=>'digit', 'tl_class'=>'w50'),
 	'sql'		=> "int(9) unsigned NOT NULL default '0'"
 );
@@ -25,6 +26,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['BgSlider_waitTime'] = array
 (
 	'label'		=> &$GLOBALS['TL_LANG']['tl_module']['BgSlider_waitTime'],
 	'inputType'	=> 'text',
+	'default'   => '1500',
 	'eval'		=> array('mandatory'=>true, 'rgxp'=>'digit', 'tl_class'=>'w50'),
 	'sql'		=> "int(9) unsigned NOT NULL default '0'"
 );
