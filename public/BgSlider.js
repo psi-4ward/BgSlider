@@ -18,7 +18,9 @@ var BgSlider = new Class({
 		autoplay: true,
 		showNav: true,
 		slideAfterLoad: true,
-		keepRatio: false
+		keepRatio: false,
+		domID: '',
+		cssClass: ''
 	},
 
 	imgEls: [],
@@ -34,6 +36,12 @@ var BgSlider = new Class({
 		this.setOptions(options);
 		this.src = images;
 
+		var container = document.id(document.body);
+		if(this.options.domID || this.options.cssClass)
+		{
+			container = new Element('div',{id:this.options.domID}).addClass(this.options.cssClass).inject(container,'top');
+		}
+
 		for(var i=0;i<2;i++)
 		{
 			this.imgEls[i] = new Element('img',{
@@ -45,7 +53,7 @@ var BgSlider = new Class({
 					'z-index': '-1'-i
 				},
 				'src': this.src[i].path
-			}).inject(document.id(document.body), 'top');
+			}).inject(container, 'top');
 			if(this.options.keepRatio)
 			{
 				this.setImageSize(this.imgEls[i], this.src[i]);
@@ -79,13 +87,13 @@ var BgSlider = new Class({
 				'events':{
 					'click': this.next.bind(this)
 				}
-			}).inject(document.id(document.body),'bottom');
+			}).inject(container,'bottom');
 			new  Element('span',{
 				'id':'BgSliderPrev',
 				'events':{
 					'click': this.prev.bind(this)
 				}
-			}).inject(document.id(document.body),'bottom');
+			}).inject(container,'bottom');
 		}
 
 		if(this.options.autoplay) this.play();

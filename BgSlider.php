@@ -63,6 +63,11 @@ class BgSlider extends \Module
 	 */
 	protected function compile()
 	{
+		// add ID and cssClass to the script
+		if(!is_array($this->cssID)) $this->cssID = array('','');
+		$this->Template->domID = $this->cssID[0];
+		$this->Template->cssClass = $this->cssID[1];
+
 		$images = array();
 		$objFiles = $this->objFiles;
 
